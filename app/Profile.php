@@ -22,6 +22,7 @@ class Profile extends Model
     }
 
     public function isNotVoterRepresentative() {
-        return in_array($this->grade->id, array(3));
+        // return in_array($this->grade->id, array(3,9));
+        return in_array($this->grade->id, array(1000));
     }
 }

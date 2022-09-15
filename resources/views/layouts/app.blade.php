@@ -13,14 +13,14 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
     <link href="/css/fonts.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script type='text/javascript' src='/js/jquery.js'></script>
     <link rel="stylesheet" href="/css/w3.css">
-    
+
     @yield('headers')
 </head>
 <body>
@@ -74,7 +74,7 @@
                                     </div>
                                 </li>
                             @elseif(session('access_level')->isComelec())
-                                
+
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="{{ route('party_list') }}">List of Parties</a>
                                     </a>
@@ -84,13 +84,13 @@
                                         {{-- <a class="dropdown-item" href="{{ route('party_add') }}">Add Party</a> --}}
                                     </div>
                                 </li>
-                            
+
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link" href="{{ route('candidate_list') }}">
                                         Candidates List<span class="caret"></span>
                                     </a>
                                 </li>
-                            
+
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link" href="{{ route('voter_list') }}">Voters List</a>
                                     </a>
@@ -121,7 +121,7 @@
                                     @if(session('access_level')->isAdmin())
                                     <button onclick="open_modal('update_admin_profile');" class="dropdown-item">Update Profile</button>
 									@else
-                                    @endif  
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}">{{ __('Logout') }}</a>
                                 </div>
                             </li>
