@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2022 at 10:58 AM
+-- Generation Time: Sep 15, 2022 at 02:08 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -335,7 +335,7 @@ INSERT INTO `ref_position` (`id`, `position_name`, `position_description`, `posi
 (6, 'Public Information Officer', NULL, NULL, NULL),
 (7, 'Peace Officer', NULL, NULL, NULL),
 (8, 'Representative', NULL, NULL, 1),
-(9, 'Chairman', NULL, NULL, 1);
+(9, 'Chairperson', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -396,7 +396,7 @@ CREATE TABLE `ref_school` (
 --
 
 INSERT INTO `ref_school` (`id`, `school_id`, `school_name`, `school_logo`, `ref_classification_id`, `school_year`, `ref_region_id`, `ref_division_id`) VALUES
-(4, '123456', 'San Rafael Elementary School', '/school/4.jpg', 2, NULL, 13, 21);
+(4, '304699', 'Cabadbaran City National High School', '/school/4.jpg', 2, NULL, 16, 181);
 
 -- --------------------------------------------------------
 
@@ -430,21 +430,6 @@ CREATE TABLE `tbl_ballot` (
   `tbl_candidate_id` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_ballot`
---
-
-INSERT INTO `tbl_ballot` (`id`, `tbl_user_id`, `ref_position_id`, `tbl_candidate_id`) VALUES
-(1, 4, 1, 2),
-(2, 4, 2, 5),
-(3, 4, 3, NULL),
-(4, 4, 4, NULL),
-(5, 4, 5, NULL),
-(6, 4, 6, NULL),
-(7, 4, 7, NULL),
-(8, 4, 8, 8),
-(9, 4, 9, 11);
-
 -- --------------------------------------------------------
 
 --
@@ -467,16 +452,59 @@ CREATE TABLE `tbl_candidate` (
 --
 
 INSERT INTO `tbl_candidate` (`id`, `last_name`, `first_name`, `middle_name`, `ref_position_id`, `tbl_party_id`, `ref_grade_level_id`, `photo`) VALUES
-(1, '1', 'President', '', 1, 1, NULL, NULL),
-(2, '2', 'President', '', 1, 2, NULL, NULL),
-(3, '3', 'President', '', 1, 3, NULL, NULL),
-(4, '1', 'Vice-President', '', 2, 1, NULL, NULL),
-(5, '2', 'Vice-President', '', 2, 2, NULL, NULL),
-(6, '3', 'Vice-President', '', 2, 3, NULL, NULL),
-(7, '1', 'Representative', '', 8, 1, 4, NULL),
-(8, '2', 'Representative', '', 8, 2, 4, NULL),
-(10, '1', 'Chairman', '', 9, 1, 4, NULL),
-(11, '2', 'Chairman', '', 9, 3, 4, NULL);
+(41, 'Bali-os', 'Daylin Feb', 'B.', 1, 1, NULL, NULL),
+(42, 'Estomo', 'Don James William', 'R.', 2, 1, NULL, NULL),
+(43, 'Paderes', 'Alliyah Jamanin', 'M.', 3, 1, NULL, NULL),
+(44, 'Asio', 'Ivygail Florence', 'F.', 4, 1, NULL, NULL),
+(45, 'Alipao', 'Kirk Angelo', 'R.', 5, 1, NULL, NULL),
+(46, 'Baguin', 'Clyte Daine Owen', 'V.', 6, 1, NULL, NULL),
+(47, 'Botoy', 'Francis Jeo Mar', 'L.', 7, 1, NULL, NULL),
+(48, 'Abasolo', 'Jestoni', 'P.', 9, 1, 4, NULL),
+(49, 'Alferez', 'Althea Celandine', 'V', 9, 1, 4, NULL),
+(50, 'Amoy', 'Zoe Brielle', 'L.', 9, 1, 4, NULL),
+(51, 'Jarina', 'Cristina Marie', 'B.', 9, 1, 4, NULL),
+(52, 'Rosales', 'Rhenz Jericho', 'P.', 9, 1, 4, NULL),
+(53, 'Tero', 'Maritiza Zayn', 'T.', 9, 1, 4, NULL),
+(54, 'Amparado', 'Erich', 'A.', 8, 1, 4, NULL),
+(55, 'Balite', 'Mary Grace', 'P.', 8, 1, 4, NULL),
+(56, 'Gambala', 'Randy', 'C.', 8, 1, 4, NULL),
+(57, 'Guzon', 'John Jacob', 'M.', 8, 1, 4, NULL),
+(58, 'Tobias', 'Love Rhean', 'N.', 8, 1, 4, NULL),
+(59, 'Alipao', 'Cloe Lavender', 'R.', 9, 1, 5, NULL),
+(60, 'Solona', 'Angel Ann', 'P.', 9, 1, 5, NULL),
+(61, 'Gepitulan', 'Christy Kaje', 'J.', 8, 1, 5, NULL),
+(62, 'Alipao', 'Christryne Khyn', 'P.', 9, 1, 6, NULL),
+(63, 'Regunda', 'Krysh Aeu', 'P.', 9, 1, 6, NULL),
+(64, 'Anino', 'Keren Hapu', 'D.', 8, 1, 6, NULL),
+(65, 'Racaza', 'Joanna Catalina', 'A.', 8, 1, 6, NULL),
+(66, 'Contreras', 'Christisent Angel', 'D.', 9, 1, 7, NULL),
+(67, 'Estoque', 'Domic Angelique', 'R.', 9, 1, 7, NULL),
+(68, 'Cagampang', 'Kyeila Rheyan Mish', 'P.', 8, 1, 7, NULL),
+(69, 'Enciso', 'Rhandy John', 'B.', 8, 1, 7, NULL),
+(70, 'BALITE', 'JOHN EMMANUEL', 'P.', 1, 1, NULL, NULL),
+(71, 'SANTOS', 'LIAN JON', 'B.', 1, 1, NULL, NULL),
+(72, 'JUAB JHON', 'FLORENCE', '', 2, 1, NULL, NULL),
+(73, 'LAURETA', 'AERLGE JON', 'D.', 2, 1, NULL, NULL),
+(74, 'ROSALES', 'DUSTIN', 'L', 3, 1, NULL, NULL),
+(75, 'SAARENAS', 'FYLE JILIANNE', 'B', 3, 1, NULL, NULL),
+(76, 'ORTILLANO', 'CHRISTIAN DALE', 'B', 4, 1, NULL, NULL),
+(77, 'ROSALES', 'SCHYLER GEL', 'L', 4, 1, NULL, NULL),
+(78, 'BACQUIAL', 'CZIANEL JEDD', 'R', 5, 1, NULL, NULL),
+(79, 'DAMO', 'MARC LORENZ', 'B', 5, 1, NULL, NULL),
+(80, 'LABARETE', 'VERGEL', 'L', 6, 1, NULL, NULL),
+(81, 'RECAMARA', 'KC', 'P', 6, 1, NULL, NULL),
+(82, 'VILLEGAS', 'JANESA MARIE', 'J', 7, 1, NULL, NULL),
+(83, 'MORALES', 'FAITH', 'F', 8, 1, 7, NULL),
+(84, 'RECAMARA', 'MC', 'P', 9, 1, 8, NULL),
+(85, 'TEANIO', 'PAULINE MAE', 'G.', 9, 1, 8, NULL),
+(86, 'CAYASEN', 'ARCELLY', 'D.', 8, 1, 8, NULL),
+(87, 'SUBLA', 'SOPHIA BIANA', 'S.', 8, 1, 8, NULL),
+(88, 'DACERA', 'RAMA ACE', 'C.', 9, 1, 9, NULL),
+(89, 'MIJARES', 'RUTHEA MAE', 'B.', 9, 1, 9, NULL),
+(90, 'PABIA', 'EARL JERYHIN ZACHARY', 'T.', 9, 1, 9, NULL),
+(91, 'ATEGA', 'ALTHEA RONELLA', 'L.', 8, 1, 9, NULL),
+(92, 'CATAP', 'ANAMARIE DOROTHY', 'U', 8, 1, 9, NULL),
+(93, 'MACALUA', 'RENE', 'N.', 8, 1, 9, NULL);
 
 -- --------------------------------------------------------
 
@@ -495,9 +523,7 @@ CREATE TABLE `tbl_party` (
 --
 
 INSERT INTO `tbl_party` (`id`, `party_name`, `description`) VALUES
-(1, 'Independent', NULL),
-(2, 'Party 1', 'Part 1 Description'),
-(3, 'Party 2', 'Party 2 Description');
+(1, 'Independent', NULL);
 
 -- --------------------------------------------------------
 
@@ -523,8 +549,9 @@ CREATE TABLE `tbl_profile` (
 
 INSERT INTO `tbl_profile` (`id`, `tbl_user_id`, `last_name`, `first_name`, `middle_name`, `lrn`, `ref_grade_level_id`, `section`, `nickname`) VALUES
 (1, 1, 'user', 'super', '', NULL, NULL, NULL, 'oppabee'),
-(2, 2, 'Doe', 'John', '', NULL, NULL, NULL, NULL),
-(4, 4, '1', 'Student', '', '123456789123', '4', 'Section 1', NULL);
+(2, 2, 'user', 'user', 'user', NULL, NULL, NULL, NULL),
+(1059, 1059, 'jezan', 'jezan', '', NULL, NULL, NULL, NULL),
+(1061, 1061, 'Doe', 'John', '', '123456789123', '9', 'Section 1', NULL);
 
 -- --------------------------------------------------------
 
@@ -567,8 +594,8 @@ CREATE TABLE `tbl_user` (
 
 INSERT INTO `tbl_user` (`id`, `username`, `password`, `ref_access_level_id`, `password_salt`, `created_by`, `is_voted`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, NULL, NULL, '0'),
-(2, 'comelec', '5f4dcc3b5aa765d61d8327deb882cf99', 2, NULL, '1', '0'),
-(4, '123456789123', 'df96220fa161767c5cbb95567855c86b', 3, '573b792e', '2', 'voted');
+(1059, 'username1', '25d55ad283aa400af464c76d713c07ad', 2, NULL, '1', '0'),
+(1061, '123456789123', 'df96220fa161767c5cbb95567855c86b', 3, '573b792e', '1059', '0');
 
 -- --------------------------------------------------------
 
@@ -681,7 +708,7 @@ ALTER TABLE `ref_grade_level`
 -- AUTO_INCREMENT for table `ref_position`
 --
 ALTER TABLE `ref_position`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `ref_region`
@@ -705,13 +732,13 @@ ALTER TABLE `ref_school_classification`
 -- AUTO_INCREMENT for table `tbl_ballot`
 --
 ALTER TABLE `tbl_ballot`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5527;
 
 --
 -- AUTO_INCREMENT for table `tbl_candidate`
 --
 ALTER TABLE `tbl_candidate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `tbl_party`
@@ -723,13 +750,13 @@ ALTER TABLE `tbl_party`
 -- AUTO_INCREMENT for table `tbl_profile`
 --
 ALTER TABLE `tbl_profile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1062;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1062;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
